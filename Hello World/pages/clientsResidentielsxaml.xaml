@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="Hello_World.pages.clientsResidentielsxaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Hello_World.pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Column="0" Margin="30">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Clients Résidentiels"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="45"
+                           FontWeight="Bold"/>
+                <TextBox Grid.Row="1" x:Name="nomClient"/>
+                <Button Grid.Row="2" Content="Supprimer"
+                        HorizontalAlignment="Center"
+                        FontSize="35" Click="supprimer"/>
+                <Button Grid.Row="3" Content="Ajouter" 
+                        HorizontalAlignment="Center"
+                        FontSize="35" Click="ajouter"/>
+                <TextBlock Text="veullier remettre votre mot de passe"
+                           x:Name="tropTard" Visibility="Collapsed"/>
+
+            </Grid>
+        </ScrollViewer>
+
+        <ListView x:Name="clientsResidentiel"
+                          Grid.Column="1"
+                          SelectionChanged="clientsResidentiel_SelectionChanged"
+                          SelectionMode="Single"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+        </ListView>
+    </Grid>
+</Page>
