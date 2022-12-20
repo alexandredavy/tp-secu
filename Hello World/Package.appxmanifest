@@ -8,8 +8,8 @@
 
   <Identity
     Name="27607328-6160-406b-b5e8-93f12ab8e7e6"
-    Publisher="CN=AlexandreDAVY"
-    Version="1.0.8.0" />
+    Publisher="CN=Alexandre DAVY"
+    Version="1.0.13.0" />
 
   <mp:PhoneIdentity PhoneProductId="27607328-6160-406b-b5e8-93f12ab8e7e6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="Hello_World.App">
       <uap:VisualElements
-        DisplayName="Hello World"
+        DisplayName="Logiciel de gestion de Clients"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="Hello World"

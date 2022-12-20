@@ -27,6 +27,8 @@ namespace Hello_World.pages
         {
             this.InitializeComponent();
             listUser.ItemsSource = DataAccess.Users.getUser();
+            conditionPassword.Visibility = Visibility.Collapsed;
+            conditionDelai.Visibility = Visibility.Collapsed;
         }
 
         private void HandleCheck(object sender, RoutedEventArgs e)
@@ -38,9 +40,27 @@ namespace Hello_World.pages
         {
             if(rl != null & mail.Text!= null & password.Text != null)
             {
-                DataAccess.Users.addUser(mail.Text, password.Text, rl);
-                rl = null;
-                Frame.Navigate(typeof(pages.newUser));
+                if (password.Text.Any(char.IsDigit) && password.Text.Any(char.IsLower) && password.Text.Any(char.IsUpper))
+                {
+                    conditionPassword.Visibility = Visibility.Collapsed;
+                    DateTime tmp = DateTime.Now;
+                    TimeSpan ts = tmp - DataAccess.Dtime;
+                    if (ts.TotalSeconds < DataAccess.longueur)
+                    {
+                        conditionDelai.Visibility = Visibility.Collapsed;
+                        DataAccess.Users.addUser(mail.Text, password.Text, rl);
+                        rl = null;
+                        Frame.Navigate(typeof(pages.newUser));
+                    }
+                    else
+                    {
+                        conditionDelai.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    conditionPassword.Visibility = Visibility.Visible;
+                }
             }
         }
 
@@ -48,9 +68,19 @@ namespace Hello_World.pages
         {
             if (mail.Text != null)
             {
-                DataAccess.Users.delUser(mail.Text);
-                rl = null;
-                Frame.Navigate(typeof(pages.newUser));
+                DateTime tmp = DateTime.Now;
+                TimeSpan ts = tmp - DataAccess.Dtime;
+                if (ts.TotalSeconds < DataAccess.longueur)
+                {
+                    conditionDelai.Visibility = Visibility.Collapsed;
+                    DataAccess.Users.delUser(mail.Text);
+                    rl = null;
+                    Frame.Navigate(typeof(pages.newUser));
+                }
+                else
+                {
+                    conditionDelai.Visibility = Visibility.Visible;
+                }
             }
         }
     }

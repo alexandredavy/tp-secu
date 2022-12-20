@@ -28,6 +28,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Text="nouveau mot de passe :"
@@ -76,6 +77,12 @@
                          PlaceholderText ="15 secondes"
                          Margin="10,5,50,10"
                          Grid.Row="8"/>
+                <TextBlock Text="Il faut se reconnecter"
+                         Grid.Row="10"
+                           x:Name="conditionDelai"
+                           Visibility="Collapsed"
+                           Margin="45,10,10,10"
+                           FontSize="14"/>
                 <Button Grid.Row="11" Content="Sauvegarder"
                         Margin="35,10,0,25"
                         Background="Gray"

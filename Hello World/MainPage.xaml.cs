@@ -53,7 +53,7 @@ namespace Hello_World
                 MediaElement mediaElement = new MediaElement();
                 var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
                 Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(
-                    "Le mail est " + inputMail.Text + " et le mot de passe est " + inputPassword.Password);
+                    "Bienvenue " + inputMail.Text);
                 mediaElement.SetSource(stream, stream.ContentType);
                 mediaElement.Play();
                 List<string> tmp = DataAccess.Users.connexion(inputMail.Text, inputPassword.Password);

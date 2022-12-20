@@ -45,15 +45,18 @@
                 <TextBlock Grid.Row="1" Text="Mail:"
                            Margin="35,10,10,10"/>
                 <TextBox Grid.Row="2" x:Name="inputMail"
+                         Foreground="Black"
                          Margin="35,10,35,10" Background="White"/>
                 <TextBlock Grid.Row="3" Text="Password:"
                            Margin="35,10,10,10"/>
                 <PasswordBox Grid.Row="4" x:Name="inputPassword"
                              Margin="35,10,35,10"
+                             Foreground="Black"
                              Background="White"/>
                 <Button Grid.Row="5" Content="Submit"
                         Margin="35,0,0,10"
                         Background="White"
+                        Foreground="Black"
                         CornerRadius="5"
                         FontSize="30"
                         Padding="5" VerticalAlignment="Bottom" Click="Button_Click"/>
@@ -66,12 +69,14 @@
                         CornerRadius="5"
                         FontSize="30"
                         Padding="5"
+                        Foreground="Black"
                         Margin="5"
                         Visibility="Collapsed"
                         Background="White" Click="btAffaires_Click"/>
                 <Button Grid.Row="9" Content="Clients Résidentils"
                         x:Name="btResid"
                         CornerRadius="5"
+                        Foreground="Black"
                         FontSize="30"
                         Padding="5"
                         Margin="5"
@@ -81,6 +86,7 @@
                         x:Name="btUser"
                         CornerRadius="5"
                         FontSize="30"
+                        Foreground="Black"
                         Padding="5"
                         Margin="5"
                         Visibility="Collapsed"
@@ -92,6 +98,7 @@
                         Padding="5"
                         Margin="5"
                         Visibility="Collapsed"
+                        Foreground="Black"
                         Background="White" Click="btparametre_Click"/>
                 <TextBlock Text="" Grid.Row="12"
                            Margin="10,0,0,0" x:Name="txtRole"/>

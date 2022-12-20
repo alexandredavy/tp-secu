@@ -29,6 +29,7 @@ namespace Hello_World.pages
             delay.PlaceholderText = DataAccess.longueur.ToString();
             delayps.PlaceholderText= DataAccess.antiForceBrute.ToString();
             tentatvie.PlaceholderText = DataAccess.tentativep.ToString();
+            conditionDelai.Visibility= Visibility.Collapsed;
 
             if (DataAccess.Users.connexion(DataAccess.Dmail, DataAccess.Dpassword)[1] == "admin")
             {
@@ -53,9 +54,10 @@ namespace Hello_World.pages
             TimeSpan ts = tmp - DataAccess.Dtime;
             if (ts.TotalSeconds < DataAccess.longueur)
             {
+                conditionDelai.Visibility = Visibility.Collapsed;
                 if (newpassword1.Text == newpassword2.Text)
                 {
-                    if (newpassword1.Text != "")
+                    if (newpassword1.Text != "" && newpassword1.Text.Any(char.IsDigit) && newpassword1.Text.Any(char.IsLower) && newpassword1.Text.Any(char.IsUpper))
                     {
                         DataAccess.Users.changePassword(DataAccess.Dmail, DataAccess.Dpassword, newpassword1.Text);
                         DataAccess.Dpassword= newpassword1.Text;
@@ -79,6 +81,10 @@ namespace Hello_World.pages
                 }
                 Frame.Navigate(typeof(parametres));
                 DataAccess.Logs.savedata();
+            }
+            else
+            {
+                conditionDelai.Visibility = Visibility.Visible;
             }
         }
 

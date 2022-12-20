@@ -26,6 +26,8 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -71,15 +73,27 @@
                          Content="résidentiel"
                          Margin="20,10,10,10"/>
 
+            <TextBlock Text="Il faut au minimum 1 minuscule, 1 majuscule et 1 chiffre" Grid.Row="8"
+                       FontSize="14"
+                       Visibility="Collapsed"
+                       x:Name="conditionPassword"
+                       Margin="35,10,10,10"/>
+
+            <TextBlock Text="Il faut se reconnecter" Grid.Row="9"
+                       FontSize="14"
+                       Visibility="Collapsed"
+                       x:Name="conditionDelai"
+                       Margin="35,10,10,10"/>
+
             <Button Content="ajouter"
                     FontSize="20"
-                    Grid.Row="8"
+                    Grid.Row="10"
                     x:Name="ajUser"
                     Margin="45,10,10,10" Click="ajUser_Click"/>
 
             <Button Content="suprimer"
                     FontSize="20"
-                    Grid.Row="9"
+                    Grid.Row="11"
                     x:Name="supUser"
                     Margin="45,10,10,10" Click="supUser_Click"/>
 
