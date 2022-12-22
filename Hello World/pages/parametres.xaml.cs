@@ -26,8 +26,8 @@ namespace Hello_World.pages
         {
             this.InitializeComponent();
             histLog.ItemsSource = DataAccess.Logs.GetLogs();
-            delay.PlaceholderText = DataAccess.longueur.ToString();
-            delayps.PlaceholderText= DataAccess.antiForceBrute.ToString();
+            delay.PlaceholderText = DataAccess.longueur.ToString()+" secondes";
+            delayps.PlaceholderText= DataAccess.antiForceBrute.ToString()+" secondes";
             tentatvie.PlaceholderText = DataAccess.tentativep.ToString();
             conditionDelai.Visibility= Visibility.Collapsed;
 

@@ -76,7 +76,7 @@
                 <TextBox x:Name="tentatvie"
                          Visibility="Collapsed"
                          BeforeTextChanging="tentatvie_BeforeTextChanging"
-                         PlaceholderText ="15 secondes"
+                         PlaceholderText ="15"
                          Margin="10,5,50,10"
                          Grid.Row="8"/>
                 <TextBlock Text="Il faut se reconnecter"

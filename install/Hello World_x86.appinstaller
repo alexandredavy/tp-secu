@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppInstaller
+	Uri="file:///C:/Users/davya/Documents/Hello World_x86.appinstaller"
+	Version="1.0.15.0" xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
+	<MainPackage
+		Name="27607328-6160-406b-b5e8-93f12ab8e7e6"
+		Version="1.0.15.0"
+		Publisher="CN=Alexandre DAVY"
+		Uri="file:///C:/Users/davya/Documents/Hello World_1.0.15.0_x86_Debug_Test/Hello World_1.0.15.0_x86_Debug.msix"
+		ProcessorArchitecture="x86" />
+	<Dependencies>
+		<Package
+			Name="Microsoft.NET.CoreRuntime.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/Users/davya/Documents/Hello World_1.0.15.0_x86_Debug_Test/Dependencies/x86/Microsoft.NET.CoreRuntime.2.2.appx"
+			Version="2.2.31331.1" />
+		<Package
+			Name="Microsoft.NET.CoreFramework.Debug.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/Users/davya/Documents/Hello World_1.0.15.0_x86_Debug_Test/Dependencies/x86/Microsoft.NET.CoreFramework.Debug.2.2.appx"
+			Version="2.2.31327.1" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.Debug"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="file:///C:/Users/davya/Documents/Hello World_1.0.15.0_x86_Debug_Test/Dependencies/x86/Microsoft.VCLibs.x86.Debug.14.00.appx"
+			Version="14.0.30704.0" />
+	</Dependencies>
+	<UpdateSettings>
+		<OnLaunch
+			HoursBetweenUpdateChecks="0" />
+	</UpdateSettings>
+</AppInstaller>

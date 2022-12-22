@@ -50,16 +50,16 @@ namespace Hello_World
         {
             if ((lastConnetion == null | (DateTime.Now - lastConnetion).TotalSeconds > DataAccess.antiForceBrute) & DataAccess.tentativesEchoue < DataAccess.tentativep )
             {
-                MediaElement mediaElement = new MediaElement();
-                var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-                Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(
-                    "Bienvenue " + inputMail.Text);
-                mediaElement.SetSource(stream, stream.ContentType);
-                mediaElement.Play();
                 List<string> tmp = DataAccess.Users.connexion(inputMail.Text, inputPassword.Password);
                 //test.Text = "role = " + tmp[1] + " statut = " + tmp[0];
                 if (tmp[0] == "bonMotDePass")
                 {
+                    MediaElement mediaElement = new MediaElement();
+                    var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+                    Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(
+                        "Bienvenue " + inputMail.Text);
+                    mediaElement.SetSource(stream, stream.ContentType);
+                    mediaElement.Play();
                     DataAccess.tentativesEchoue = 0;
                     affichage.Text = "";
                     DataAccess.Dmail = inputMail.Text;
@@ -98,7 +98,7 @@ namespace Hello_World
                     lastConnetion = DateTime.Now;
                     DataAccess.tentativesEchoue += 1;
                     affichage.Text = "mauvais mot de passe";
-                    DataAccess.Logs.AddLog("tentative de connection échoué");
+                    DataAccess.Logs.AddLog("tentative de connection échouée");
                 }
             }
             else if (DataAccess.tentativesEchoue > 5 )
