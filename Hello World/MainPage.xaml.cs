@@ -48,7 +48,7 @@ namespace Hello_World
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if ((lastConnetion == null | (DateTime.Now - lastConnetion).TotalSeconds > DataAccess.antiForceBrute) & DataAccess.tentativesEchoue <= 5 )
+            if ((lastConnetion == null | (DateTime.Now - lastConnetion).TotalSeconds > DataAccess.antiForceBrute) & DataAccess.tentativesEchoue < DataAccess.tentativep )
             {
                 MediaElement mediaElement = new MediaElement();
                 var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();

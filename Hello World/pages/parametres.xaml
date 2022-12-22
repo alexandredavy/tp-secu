@@ -36,9 +36,11 @@
                            Margin="35,15,10,10"
                            FontSize="25"/>
                 <TextBox x:Name="newpassword1"
+                         PlaceholderText="nouveau mot de passe"
                          Margin="10,10,50,5"
                          Grid.Row="1"/>
                 <TextBox x:Name="newpassword2"
+                         PlaceholderText="comfirmer le nouveau mot de passe"
                          Margin="10,5,50,10"
                          Grid.Row="2"/>
                 <TextBlock Text="délay de validité de la session :"
@@ -53,7 +55,7 @@
                          PlaceholderText ="15 secondes"
                          Margin="10,5,50,10"
                          Grid.Row="4"/>
-                <TextBlock Text="temp entre chaques mot de passe :"
+                <TextBlock Text="temps entre chaques mot de passe :"
                          Grid.Row="5"
                            x:Name="txtDelayps"
                            Visibility="Collapsed"

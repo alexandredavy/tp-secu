@@ -64,20 +64,23 @@ namespace Hello_World.pages
                         DataAccess.Logs.AddLog("nouveau mot de passe");
                     }
                 }
-                if (delay.Text != "")
+                if (DataAccess.Users.connexion(DataAccess.Dmail, DataAccess.Dpassword)[1] == "admin")
                 {
-                    DataAccess.longueur = int.Parse(delay.Text);
-                    DataAccess.Logs.AddLog("nouveau delay de session");
-                }
-                if (delayps.Text != "")
-                {
-                    DataAccess.antiForceBrute = int.Parse(delayps.Text);
-                    DataAccess.Logs.AddLog("nouveau delay de mot de passe");
-                }
-                if (tentatvie.Text != "")
-                {
-                    DataAccess.tentativep = int.Parse(tentatvie.Text);
-                    DataAccess.Logs.AddLog("nouveau nombre de tentatives");
+                    if (delay.Text != "")
+                    {
+                        DataAccess.longueur = int.Parse(delay.Text);
+                        DataAccess.Logs.AddLog("nouveau delai de session");
+                    }
+                    if (delayps.Text != "")
+                    {
+                        DataAccess.antiForceBrute = int.Parse(delayps.Text);
+                        DataAccess.Logs.AddLog("nouveau delai de mot de passe");
+                    }
+                    if (tentatvie.Text != "")
+                    {
+                        DataAccess.tentativep = int.Parse(tentatvie.Text);
+                        DataAccess.Logs.AddLog("nouveau nombre de tentatives");
+                    }
                 }
                 Frame.Navigate(typeof(parametres));
                 DataAccess.Logs.savedata();

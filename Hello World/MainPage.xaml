@@ -73,7 +73,7 @@
                         Margin="5"
                         Visibility="Collapsed"
                         Background="White" Click="btAffaires_Click"/>
-                <Button Grid.Row="9" Content="Clients Résidentils"
+                <Button Grid.Row="9" Content="Clients Résidentiels"
                         x:Name="btResid"
                         CornerRadius="5"
                         Foreground="Black"
